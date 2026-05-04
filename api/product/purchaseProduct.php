@@ -49,9 +49,9 @@ $stmt->close();
 $conn->close();
 
 if ($success) {
-    header("Location: http://localhost:3000/furniture?status=success");
+    header("Location: /furniture?status=success");
 } else {
-    header("Location: http://localhost:3000/furniture?status=fail");
+    header("Location: /furniture?status=fail");
 }
 exit;
 

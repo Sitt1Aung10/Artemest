@@ -7,6 +7,14 @@
   },
   "routes": [
     {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/product/uploads/(.*)",
+      "dest": "/product/uploads/$1"
+    },
+    {
       "src": "/api/(.*)",
       "dest": "/api/$1"
     },

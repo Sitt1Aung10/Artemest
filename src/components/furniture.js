@@ -9,7 +9,7 @@ export function Furniture() {
     const [products, setProduct] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost/api/product/fetchProduct.php')
+        fetch('/api/product/fetchProduct.php')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -410,7 +410,7 @@ const resetFilters = () => {
                 {products.map((product, index) => (
                     <div className='productCard'>
                         <i className='fa-solid fa-xmark closeCard'></i>
-                        <img className='productImage' src={`http://localhost/api/product/uploads/${product.productImage}`} alt={product.productName} />
+                        <img className='productImage' src={`/product/uploads/${product.productImage}`} alt={product.productName} />
                         <div className='contentInside'>
                             <p className='productName'>{product.productName}</p><br></br>
                             <p className='productKind'>Product Kind - {product.productKind}</p><br></br>
@@ -424,7 +424,7 @@ const resetFilters = () => {
                         <button className='addToCart' onClick={() =>handleAddtocart(product)}><i class="fa-solid fa-cart-shopping"></i></button>
                         <button className='buyNow'>Check The Product</button>
                         <form id={`buyNowForm-${index}`}
-                            action='http://localhost/api/product/purchaseProduct.php'
+                            action='/api/product/purchaseProduct.php'
                             method='POST'>
                             <input type='hidden' name='productId' value={product.productID} />
                             <input type='hidden' name='productName' value={product.productName} />

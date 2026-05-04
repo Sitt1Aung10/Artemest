@@ -25,7 +25,7 @@ export default function SigninForm() {
   
     try {
       const response = await axios.post(
-        'http://localhost/api/user/signin.php',
+        '/api/user/signin.php',
         formData,
         {
           withCredentials: true,

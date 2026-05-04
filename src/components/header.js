@@ -5,7 +5,7 @@ const Header = () => {
 return (
     <div>
         <header className='app-header'>
-            <img className='app-logo' src='/images/logo.png ' alt='Artemest' />
+            <img className='app-logo' src='/images/logo.png' alt='Artemest' />
 
             <div>
                 <button>
@@ -20,7 +20,7 @@ return (
                 <Link to='/signin'>Sign In</Link>
             </div>
             <div>
-                <form  method="POST" action="http://localhost/api/user/logout.php">
+                <form  method="POST" action="/api/user/logout.php">
                     <button type='submit'>Log Out</button>
                 </form>
             </div>
