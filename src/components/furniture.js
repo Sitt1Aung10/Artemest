@@ -1,4 +1,4 @@
-import React, { use } from 'react'
+import React from 'react'
 import Header from './header'
 import { useState, useEffect } from 'react'
 import '../App.css'
@@ -7,8 +7,6 @@ import '../App.css'
 export function Furniture() {
 
     const [products, setProduct] = useState([]);
-
-    const [selectedproduct, setSelectedProduct] = useState(null);
 
     useEffect(() => {
         fetch('http://localhost/api/product/fetchProduct.php')
@@ -23,8 +21,6 @@ export function Furniture() {
     }, []);
 
     useEffect(() => {
-         const productCards = document.querySelectorAll('.productCard');
-        const filterDropdowns = document.querySelectorAll('#filter .dropdown p');
        document.querySelectorAll('#filter .dropdown p').forEach(filterOption => {
     filterOption.addEventListener('click', () => {
         const selectedFilter = filterOption.innerText.toLowerCase();
@@ -75,7 +71,7 @@ const resetFilters = () => {
 
                     // Hide clicked buttons except all
                     buyNowButtons.forEach(btn => {
-                        if (btn == button) {
+                        if (btn === button) {
                             btn.style.display = 'none';
                         }
                     });
@@ -163,7 +159,6 @@ const resetFilters = () => {
     const productCards = document.querySelectorAll('.productCard');
     closeBtn.forEach(button => {
         button.addEventListener('click', () => {
-            const buyNowButtons = document.querySelectorAll('.buyNow');
             const productCard = button.closest('.productCard');
             const productDetails = button.closest('.productCard').querySelector('.productDetails');
             const buyNowForm = button.closest('.productCard').querySelector('form');
@@ -415,7 +410,7 @@ const resetFilters = () => {
                 {products.map((product, index) => (
                     <div className='productCard'>
                         <i className='fa-solid fa-xmark closeCard'></i>
-                        <img className='productImage' src={`http://localhost/api/product/uploads/${product.productImage}`} />
+                        <img className='productImage' src={`http://localhost/api/product/uploads/${product.productImage}`} alt={product.productName} />
                         <div className='contentInside'>
                             <p className='productName'>{product.productName}</p><br></br>
                             <p className='productKind'>Product Kind - {product.productKind}</p><br></br>
@@ -479,22 +474,5 @@ const resetFilters = () => {
 }
 
     });
-
-
-function ProductCard({ product }) {
-    const [itemCount, setItemCount] = useState(1);
-
-    const increaseCount = () => {
-        if (itemCount < product.instock) {
-            setItemCount(prev => prev + 1);
-        }
-    };
-
-    const decreaseCount = () => {
-        if (itemCount > 1) {
-            setItemCount(prev => prev - 1);
-        }
-    };
-}
 
 

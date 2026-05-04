@@ -8,7 +8,7 @@ const RegisterContent = () => {
                 <input type='email' />
                 <button>Submit</button>
             </div>
-            <a to='/'>Already Register?Sign Up</a>
+            <a href='/signin'>Already Register?Sign Up</a>
             <article>
                 Channeling the essence of high-end Italian craftsmanship and design, Artemest is proud to work with the world’s leading design professionals, including architects, interior designers, and real estate developers across the US, Middle East, Asia Pacific, and Europe.<br></br>
 

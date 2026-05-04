@@ -23,7 +23,7 @@ return (
         ) : (
             cartItems.map((item, index) => (
                 <div key={index} className="cartCard">
-                    <img src={`http://localhost/api/product/uploads/${item.productImage}`} />
+                    <img src={`http://localhost/api/product/uploads/${item.productImage}`} alt={item.productName} />
                     <p>{item.productName}</p>
                     <p>Price: {item.productPrice} USD</p>
                     <p>Shipping Time : {item.shippingTime} </p>

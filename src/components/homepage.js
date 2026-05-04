@@ -4,7 +4,7 @@ const Homepage = () => {
   return (
     <section id="homePage">
         <figure>
-        <img   src='/images/homeImg.jpg' />
+        <img src='/images/homeImg.jpg' alt='Artemest trade program' />
         <figcaption>
           <h6>Trade</h6>
           <h1>Welcome To Artemest Trade Program</h1>

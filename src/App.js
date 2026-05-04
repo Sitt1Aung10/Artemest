@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import SigninForm from './components/signinForm';
 import {Furniture }from './components/furniture';
