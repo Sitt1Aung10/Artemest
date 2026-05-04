@@ -1,0 +1,21 @@
+{
+  "functions": {
+    "artemestbackend/**/*.php": {
+      "runtime": "vercel-php@0.7.5"
+    }
+  },
+  "routes": [
+    {
+      "src": "/artemestbackend/(.*)\\.php",
+      "dest": "/artemestbackend/$1.php"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
