@@ -1,21 +1,23 @@
 {
-  "functions": {
-    "artemestbackend/**/*.php": {
-      "runtime": "vercel-php@0.7.5"
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    },
+    {
+      "src": "artemestbackend/**/*.php",
+      "use": "vercel-php@0.7.5"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/artemestbackend/(.*)\\.php",
       "dest": "/artemestbackend/$1.php"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/$1"
     }
   ]
 }
