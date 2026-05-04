@@ -20,7 +20,7 @@ return (
                 <Link to='/signin'>Sign In</Link>
             </div>
             <div>
-                <form  method="POST" action="http://localhost/artemestbackend/user/logout.php">
+                <form  method="POST" action="http://localhost/api/user/logout.php">
                     <button type='submit'>Log Out</button>
                 </form>
             </div>

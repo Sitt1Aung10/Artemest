@@ -13,7 +13,7 @@ function HomePagelayout() {
     useEffect(() => {
         const checkSession = async () => {
           try {
-            const response = await axios.get('http://localhost/artemestbackend/user/checkSession.php', {
+            const response = await axios.get('http://localhost/api/user/checkSession.php', {
               withCredentials: true
             });
     

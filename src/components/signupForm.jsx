@@ -20,7 +20,7 @@ const handleSubmit = async (e) => {
     console.log(formData);
     // Add your signup logic here
 try {
-    const response = await fetch('http://localhost/artemestbackend/user/signup.php', {
+    const response = await fetch('http://localhost/api/user/signup.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

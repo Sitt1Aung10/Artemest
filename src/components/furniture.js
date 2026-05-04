@@ -11,7 +11,7 @@ export function Furniture() {
     const [selectedproduct, setSelectedProduct] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost/artemestbackend/product/fetchProduct.php')
+        fetch('http://localhost/api/product/fetchProduct.php')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -415,7 +415,7 @@ const resetFilters = () => {
                 {products.map((product, index) => (
                     <div className='productCard'>
                         <i className='fa-solid fa-xmark closeCard'></i>
-                        <img className='productImage' src={`http://localhost/artemestbackend/product/uploads/${product.productImage}`} />
+                        <img className='productImage' src={`http://localhost/api/product/uploads/${product.productImage}`} />
                         <div className='contentInside'>
                             <p className='productName'>{product.productName}</p><br></br>
                             <p className='productKind'>Product Kind - {product.productKind}</p><br></br>
@@ -429,7 +429,7 @@ const resetFilters = () => {
                         <button className='addToCart' onClick={() =>handleAddtocart(product)}><i class="fa-solid fa-cart-shopping"></i></button>
                         <button className='buyNow'>Check The Product</button>
                         <form id={`buyNowForm-${index}`}
-                            action='http://localhost/artemestbackend/product/purchaseProduct.php'
+                            action='http://localhost/api/product/purchaseProduct.php'
                             method='POST'>
                             <input type='hidden' name='productId' value={product.productID} />
                             <input type='hidden' name='productName' value={product.productName} />

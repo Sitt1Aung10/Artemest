@@ -17,7 +17,7 @@ export function AdminPanel() {
     useEffect(() => {
         const fetchPurchaseData = async () => {
             try {
-                const response = await fetch('http://localhost/artemestbackend/adminPanel.php', {
+                const response = await fetch('http://localhost/api/adminPanel.php', {
                     method: 'POST',
                     credentials: 'include',
                     headers: {
@@ -66,7 +66,7 @@ export function AdminPanel() {
         if (imageFile) formData.append('productImage', imageFile);
 
         try {
-            const response = await fetch('http://localhost/artemestbackend/product/addProduct.php', {
+            const response = await fetch('http://localhost/api/product/addProduct.php', {
                 method: 'POST',
                 body: formData
             });
